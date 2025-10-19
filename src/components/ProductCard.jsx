@@ -28,7 +28,7 @@ const ProductCard = ({ product, onAddToCart }) => {
       <CardContent sx={{ flexGrow: 1 }}>
         <Typography variant="subtitle1" gutterBottom noWrap>{product.title}</Typography>
         <Typography variant="body2" color="text.secondary">${product.price}</Typography>
-        <Typography variant="body2" color="text.secondary">⭐ {product.rating.rate} ({product.rating.count})</Typography>
+        <Typography variant="body2" color="text.secondary">⭐{product.rating.rate} ({product.rating.count})</Typography>
       </CardContent>
       </Link>
       <Button variant="contained" onClick={() => onAddToCart(product)}>Add to Cart</Button>
