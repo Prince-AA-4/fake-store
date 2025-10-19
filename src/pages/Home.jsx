@@ -40,7 +40,7 @@ const Home = ({ searchTerm, onAddToCart }) => {
   }, [searchTerm, products]);
 
   return (
-    <Box sx={{ px: { xs: 2, sm: 3, md: 5 }, py: 3, maxWidth: '1440px', mx: 'auto' }}>
+    <Box sx={{ px: { xs: 2, sm: 3, md: 5 }, py: 3, maxWidth: '1440px', mx: 'auto'}}>
       <Typography
         variant="h3"
         sx={{
@@ -50,7 +50,13 @@ const Home = ({ searchTerm, onAddToCart }) => {
           textAlign: 'center'
         }}
       >
-        🛍️🛍️Welcome to the FakeStore
+        🛍️🛍️Welcome to Prince's Discovery 
+      </Typography>
+      <Typography
+        variant="h6"
+        sx={{ color: 'black', mb: 4, textAlign: 'center' }}
+      >
+        Discover amazing products at unbeatable prices!
       </Typography>
 
       {loading && <Typography>Loading products...</Typography>}

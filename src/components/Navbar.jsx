@@ -23,7 +23,7 @@ export const ShopNavBar = ({ cartItemCount, onCartClick, onMenuClick, searchTerm
             <MenuIcon />
           </IconButton>
           <Typography variant="h6" sx={{ mr: 3 }}>
-            FakeStore
+            Prince's Discovery
           </Typography>
           <TextField
             value={searchTerm}
