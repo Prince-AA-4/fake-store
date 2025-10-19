@@ -25,7 +25,7 @@ const ProductDetails = ({ onAddToCart }) => {
   if (!product) return <Typography variant="h6">Loading product...</Typography>;
 
   return (
-    <Card sx={{ maxWidth: 600, margin: 'auto', mt: 4, boxShadow: 3 }}>
+    <Card sx={{ maxWidth: 600, margin: 'auto', mt: 4, boxShadow: 3, p: 3 }}>
       <CardMedia
         component="img"
         height="300"

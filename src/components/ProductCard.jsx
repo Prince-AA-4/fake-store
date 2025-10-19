@@ -4,11 +4,12 @@ import { Link } from 'react-router-dom';
 const ProductCard = ({ product, onAddToCart }) => {
   return (
     <Card sx={{
-      height: 350,
+      height: 300,
       display: 'flex',
       flexDirection: 'column',
       justifyContent: 'space-between',
-      p: 2,
+      p: 3,
+      width: 250,
       boxShadow: 3
 
     }}>
@@ -18,7 +19,7 @@ const ProductCard = ({ product, onAddToCart }) => {
         image={product.image}
         alt={product.title}
         sx={{
-          height: 150,
+          height: 100,
           objectFit: 'contain',
           mb: 2
         }}

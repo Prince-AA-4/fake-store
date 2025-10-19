@@ -1,4 +1,4 @@
-import React from 'react';
+// import React from 'react';
 import AppBar from '@mui/material/AppBar';
 import Toolbar from '@mui/material/Toolbar';
 import IconButton from '@mui/material/IconButton';
@@ -18,7 +18,7 @@ export const ShopNavBar = ({ cartItemCount, onCartClick, onMenuClick, searchTerm
   return (
     <AppBar position="sticky">
       <Toolbar sx={{ display: 'flex', justifyContent: 'space-between' }}>
-        <Box sx={{ display: 'flex', alignItems: 'center' }}>
+         <Box sx={{ display: 'flex', alignItems: 'center', flexGrow: 1 }}>
           <IconButton edge="start" color="inherit" sx={{ mr: 2 }} onClick={onMenuClick}>
             <MenuIcon />
           </IconButton>
@@ -34,7 +34,7 @@ export const ShopNavBar = ({ cartItemCount, onCartClick, onMenuClick, searchTerm
           />
         </Box>
 
-        <Box sx={{ display: 'flex', alignItems: 'center', gap: 2 }}>
+        <Box sx={{ display: {sm:'flex', xs:'none'}, alignItems: 'center', gap: 2 }}>
           <Link to="/" style={{ color: 'white', textDecoration: 'none' }}>Home</Link>
           <Link to="/login" style={{ color: 'white', textDecoration: 'none' }}>Login</Link>
           <IconButton color="inherit" onClick={onCartClick} title='view'>

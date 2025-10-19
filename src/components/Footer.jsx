@@ -26,7 +26,7 @@ const Footer = () => {
 
       <Box sx={{ display: 'flex', justifyContent: 'center', gap: 2, mb: 2 }}>
         <Link href="/" underline="hover">Home</Link>
-        <Link href="/shop" underline="hover">Shop</Link>
+        <Link href="/" underline="hover">Shop</Link>
         <Link href="/admin" underline="hover">Admin</Link>
         <Link href="/contact" underline="hover">Contact</Link>
       </Box>
@@ -35,7 +35,7 @@ const Footer = () => {
         <IconButton href="https://facebook.com" target="_blank"><Facebook /></IconButton>
         <IconButton href="https://twitter.com" target="_blank"><Twitter /></IconButton>
         <IconButton href="https://instagram.com" target="_blank"><Instagram /></IconButton>
-        <IconButton href="mailto:support@fakestore.com"><Email /></IconButton>
+        <IconButton href="mailto:abigiboozine175@gmail.com"><Email /></IconButton>
       </Box>
 
       <Typography variant="caption" display="block" sx={{ mt: 2 }}>

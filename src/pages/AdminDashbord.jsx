@@ -131,7 +131,7 @@ const AdminDashboard = () => {
         <Button variant="contained" onClick={handleSubmit}>
           {editingId ? 'Update Product' : 'Add Product'}
         </Button>
-        {message && <Typography sx={{ mt: 2 }}>{message}</Typography>}
+        {message && <Typography sx={{ mt: 2, color:'black' }}>{message}</Typography>}
       </Box>
 
       <TableContainer component={Paper}>

@@ -22,6 +22,7 @@ import {
   Drawer, List, ListItem, ListItemText
 } from '@mui/material';
 import Footer from "./components/Footer";
+import {Box} from "@mui/material";
 
 function App() {
   const [searchTerm, setSearchTerm] = useState('');
@@ -29,9 +30,10 @@ function App() {
   const [cartOpen, setCartOpen] = useState(false);
   const [drawerOpen, setDrawerOpen] = useState(false);
   const [checkedOutItems, setCheckedOutItems] = useState([]);
-  const cartItemCount = cartItems.reduce((sum, item) => sum + item.quantity, 0);
   const [loginIntent, setLoginIntent] = useState(null);
   const [user, setUser] = useState(null);
+  const cartItemCount = cartItems.reduce((sum, item) => sum + item.quantity, 0);
+
 
   const toggleDrawer = (open) => () => {
     setDrawerOpen(open);
@@ -63,6 +65,7 @@ function App() {
   };
 
   return (
+    <Box sx={{ backgroundColor: '#f5f5f5', minHeight: '100vh'}}>
     <BrowserRouter>
       <ShopNavBar
         cartItemCount={cartItemCount}
@@ -75,7 +78,6 @@ function App() {
       />
 
       <Drawer anchor="left" open={drawerOpen} onClose={toggleDrawer(false)}>
-
           <List>
           <ListItem button component={Link} to="/" onClick={toggleDrawer(false)}>
             <HomeIcon sx={{ mr: 1 }} />
@@ -136,6 +138,7 @@ function App() {
       </Routes>
       <Footer/>
     </BrowserRouter>
+    </Box>
   );
 }
 

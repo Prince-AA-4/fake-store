@@ -2,7 +2,7 @@ import ProductCard from "../components/ProductCard";
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 import Grid from '@mui/material/Grid';
-import { Typography, Grow } from "@mui/material";
+import { Typography, Grow,Box } from "@mui/material";
 
 const Home = ({ searchTerm, onAddToCart }) => {
   const [products, setProducts] = useState([]);
@@ -40,29 +40,41 @@ const Home = ({ searchTerm, onAddToCart }) => {
   }, [searchTerm, products]);
 
   return (
-    <Grid container spacing={3} sx={{ p: 3 }} item xs={12}>
-      <div className="home-container">
-        <Typography variant="h3" sx={{ color: 'black' }}>
-          🛍️🛍️Welcome to the FakeStore
-        </Typography>
-        {loading && <Typography>Loading products...</Typography>}
-        {error && <Typography className="error">{error}</Typography>}
-        <div className="product-grid">
-          {suggestions.length > 0 ? (
-            suggestions.map((product, index) => (
-              <Grow in={true} timeout={400 + index * 100} key={product.id}>
-                <Grid item xs={12} sm={6} md={4} lg={3}>
-                  <ProductCard product={product} onAddToCart={onAddToCart} />
-                </Grid>
-              </Grow>
-            ))
-          ) : (
-            <Typography>No matching products found.</Typography>
-          )}
-        </div>
-      </div>
-    </Grid>
+    <Box sx={{ px: { xs: 2, sm: 3, md: 5 }, py: 3, maxWidth: '1440px', mx: 'auto' }}>
+      <Typography
+        variant="h3"
+        sx={{
+          color: 'black',
+          fontSize: { xs: '1.8rem', sm: '2.5rem', md: '3rem' },
+          mb: 3,
+          textAlign: 'center'
+        }}
+      >
+        🛍️🛍️Welcome to the FakeStore
+      </Typography>
+
+      {loading && <Typography>Loading products...</Typography>}
+      {error && <Typography color="error">{error}</Typography>}
+
+      <Grid container spacing={3}>
+        {suggestions.length > 0 ? (
+          suggestions.map((product, index) => (
+            <Grow in={true} timeout={400 + index * 100} key={product.id}>
+              <Grid item xs={12} sm={6} md={4} lg={3}>
+                <ProductCard product={product} onAddToCart={onAddToCart} />
+              </Grid>
+            </Grow>
+          ))
+        ) : (
+          <Grid item xs={12}>
+            <Typography textAlign="center">No matching products found.</Typography>
+          </Grid>
+        )}
+      </Grid>
+    </Box>
   );
 };
+
+
 
 export default Home;
